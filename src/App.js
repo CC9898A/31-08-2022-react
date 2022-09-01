@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import WarningSign from './components/WarningSign';
+import MyBadge from './components/MyBadge';
+import SingleBook from './components/SingleBook';
+import fantasy from "../src/fantasy.json"
+import AllBook from './components/AllBook';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <WarningSign name="error not found"></WarningSign>
+      <MyBadge title="SingleBook"></MyBadge>
+      <SingleBook book={fantasy[0]}></SingleBook>
+      <hr></hr>
+      <h2>AllBook</h2>
+      <AllBook books={fantasy}></AllBook>
     </div>
   );
 }
